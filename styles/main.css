@@ -1,3 +1,231 @@
-.img-main-section {
-    background-image: url(https://midmod.co/wp-content/themes/midmod/img/featured-living@2x.jpg);
+/* Fuentes importadas */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* Aplico un tamaño de fuente que sirva de base para la unidad rem */
+/* Rem es una unidad de medida relativa... Las unidades relativas se usan mucho
+en Responsive Design */
+/* https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Valores_y_unidades_CSS */
+html {
+  font-size: 16px;
+}
+
+/* Variables */
+/* https://developer.mozilla.org/es/docs/Web/CSS/Using_CSS_custom_properties */
+
+:root {
+  --azul: #3f5178;
+  --celeste-claro: #f6fafd;
+  --celeste: #c2ded8;
+  --amarillo: #fcd641;
+  --rosa-claro: #fac1bd;
+  --rosa: #f66469;
+  --rosa-oscuro: #f6696d;
+  --fuente-principal: "Roboto", sans-serif;
+}
+
+/* Se usa css grid para el cuerpo de la pagina */
+/* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+body {
+  display: grid;
+  grid-template-columns: auto 80rem auto;
+}
+
+/* Contenedores genericos que trabajan con hijos directos de body*/
+.container {
+  grid-column-start: 2;
+}
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-fluid {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+/* Eleminamos algunos estilos aplicados por defecto */
+
+a {
+  text-decoration: none;
+}
+
+/* Se establecen fuentes en titulos */
+h1,
+h3,
+p {
+  font-family: var(--fuente-principal);
+  font-weight: 300;
+}
+/* header */
+header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+header > div > a {
+  color: var(--azul);
+  font-family: var(--fuente-principal);
+  margin-left: 4rem;
+}
+
+/* main */
+/* Aqui usaremos los % y vh/vw como unidades relativas. Investigar sobre esto */
+/* https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Valores_y_unidades_CSS */
+
+.background-img-main {
+  width: 100%;
+  height: 60vh;
+
+  background-image: url(https://midmod.co/wp-content/themes/midmod/img/featured-living@2x.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* news section */
+
+.news-section {
+  color: var(--azul);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-news-section {
+  width: 25%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card-news-section > img {
+  width: 100%;
+}
+
+.stars {
+  background-image: url(https://midmod.co/wp-content/uploads/2018/12/five-star.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 1rem;
+}
+
+.btn-news-section {
+  margin: 4rem 0rem 4rem 0rem;
+}
+
+/* Subscription-section */
+
+.subscription-section {
+  display: flex;
+}
+
+.subscription-section > img,
+.subscription-section > div {
+  width: 50%;
+}
+
+.container-form-subscription-section {
+  padding: 4rem 4rem 4rem 4rem;
+  background-color: var(--rosa-claro);
+  color: var(--rosa-oscuro);
+}
+
+.container-form-subscription-section > form {
+  font-family: var(--fuente-principal);
+  font-weight: 300;
+}
+
+.container-form-subscription-section > h3 {
+  color: white;
+}
+
+.container-form-subscription-section > form > div {
+  margin-bottom: 1rem;
+}
+
+.container-form-subscription-section > form > div > input {
+  border: 0;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+/* mid-section */
+.mid-section {
+  color: var(--azul);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-cards-mid-section > div:nth-child(1) {
+  grid-area: decor;
+}
+
+.container-cards-mid-section > div:nth-child(2) {
+  grid-area: kitchen;
+}
+
+.container-cards-mid-section > div:nth-child(3) {
+  grid-area: office;
+}
+
+.container-cards-mid-section > div:nth-child(4) {
+  grid-area: bath;
+}
+
+.container-cards-mid-section > div:nth-child(5) {
+  grid-area: garden;
+}
+
+.container-cards-mid-section > div:nth-child(6) {
+  grid-area: furniture;
+}
+
+.container-cards-mid-section > div:nth-child(7) {
+  grid-area: electronics;
+}
+
+.container-cards-mid-section > div:nth-child(8) {
+  grid-area: happy;
+}
+
+.container-cards-mid-section > div:nth-child(9) {
+  grid-area: shop;
+}
+.container-cards-mid-section {
+  display: grid;
+  gap: 1rem 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 25rem 25rem 25rem;
+  grid-template-areas:
+    "decor decor kitchen office" "bath garden furniture furniture"
+    "electronics happy happy shop";
+}
+
+.cards-mid-section {
+  background-color: var(--celeste-claro);
+}
+
+.cards-mid-section > img {
+  max-width: 100%;
+  height: 100%;
+}
+
+/* Botones */
+.btn {
+  font-family: var(--fuente-principal);
+  color: white;
+  padding: 1rem 2rem 1rem 2rem;
+  border: 0;
+}
+
+.btn-blue {
+  background-color: var(--azul);
+}
+
+.btn-blue:hover {
+  background-color: var(--rosa);
 }
