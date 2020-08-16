@@ -39,7 +39,9 @@ body {
 
 /* Contenedores genericos que trabajan con hijos directos de body*/
 .container {
+  width: 100%;
   grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .container-flex {
@@ -170,8 +172,9 @@ header > div > a {
   width: 100%;
   display: grid;
   gap: 1rem 1rem;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(4, 24%);
   grid-template-rows: repeat(3, 24rem);
+  justify-content: stretch;
 }
 
 .card-mid-section {
@@ -231,4 +234,15 @@ header > div > a {
 .btn-green:hover {
   background-color: var(--azul);
   color: white;
+}
+
+/* Footer */
+footer {
+  margin: 1rem 0;
+}
+
+footer > div > a {
+  font-family: var(--fuente-principal);
+  color: var(--azul);
+  margin: 0 1rem;
 }
