@@ -10,6 +10,10 @@ html {
   font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* Variables */
 /* https://developer.mozilla.org/es/docs/Web/CSS/Using_CSS_custom_properties */
 
@@ -21,6 +25,8 @@ html {
   --rosa-claro: #fac1bd;
   --rosa: #f66469;
   --rosa-oscuro: #f6696d;
+  --verde-claro: #bbdad4;
+  --verde-oscuro: #195244;
   --fuente-principal: "Roboto", sans-serif;
 }
 
@@ -160,58 +166,45 @@ header > div > a {
   align-items: center;
 }
 
-.container-cards-mid-section > div:nth-child(1) {
-  grid-area: decor;
-}
-
-.container-cards-mid-section > div:nth-child(2) {
-  grid-area: kitchen;
-}
-
-.container-cards-mid-section > div:nth-child(3) {
-  grid-area: office;
-}
-
-.container-cards-mid-section > div:nth-child(4) {
-  grid-area: bath;
-}
-
-.container-cards-mid-section > div:nth-child(5) {
-  grid-area: garden;
-}
-
-.container-cards-mid-section > div:nth-child(6) {
-  grid-area: furniture;
-}
-
-.container-cards-mid-section > div:nth-child(7) {
-  grid-area: electronics;
-}
-
-.container-cards-mid-section > div:nth-child(8) {
-  grid-area: happy;
-}
-
-.container-cards-mid-section > div:nth-child(9) {
-  grid-area: shop;
-}
 .container-cards-mid-section {
+  width: 100%;
   display: grid;
   gap: 1rem 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 25rem 25rem 25rem;
-  grid-template-areas:
-    "decor decor kitchen office" "bath garden furniture furniture"
-    "electronics happy happy shop";
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(3, 24rem);
 }
 
-.cards-mid-section {
-  background-color: var(--celeste-claro);
-}
+.card-mid-section {
+  grid-row-end: span 1;
 
-.cards-mid-section > img {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
+  background-color: var(--celeste-claro);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-mid-section > img {
+  height: 75%;
+  object-fit: contain;
+}
+
+.card-mid-section-lg {
+  grid-column-end: span 2;
+}
+
+.card-mid-section-sm {
+  grid-column-end: span 1;
+}
+
+.card-mid-section-green {
+  padding: 1rem;
+  background-color: var(--verde-claro);
+  color: var(--verde-oscuro);
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 /* Botones */
@@ -228,4 +221,14 @@ header > div > a {
 
 .btn-blue:hover {
   background-color: var(--rosa);
+}
+
+.btn-green {
+  background-color: var(--verde-oscuro);
+  color: var(--verde-claro);
+}
+
+.btn-green:hover {
+  background-color: var(--azul);
+  color: white;
 }
