@@ -1,0 +1,38 @@
+body {
+  grid-template-columns: auto 45rem auto;
+}
+
+.card-news-section {
+  width: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-cards-new-section{
+  flex-wrap: wrap;
+}
+
+.container-cards-mid-section{
+  gap: 0rem 0rem;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(5, 24rem);
+  justify-content: stretch;  
+}
+
+.card-mid-section-lg{
+  grid-column-end: span 1;
+}
+
+.card-mid-section-green{
+  grid-column-end: span 2;
+  align-items: center;
+  justify-content: center;
+}
+
+footer{
+  flex-direction: column;
+}
+
+footer > div > a {
+  margin: 0 0.5rem;
+}
